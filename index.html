@@ -15,7 +15,9 @@
         }
         .hero h2 { font-size: 32px; margin-bottom: 10px; }
         .hero p { font-size: 16px; margin-bottom: 20px; }
-        .cta-btn { display: inline-block; background: #e94560; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .cta-btn { display: inline-block; background: #e94560; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-bottom: 20px; }
+        .hero-review-btn { display: inline-block; background: #03c75a; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 14px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: background-color 0.2s; }
+        .hero-review-btn:hover { background: #02b350; }
         .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
         .section-title { font-size: 22px; margin-bottom: 20px; border-left: 5px solid #e94560; padding-left: 10px; }
         .repair-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
@@ -38,14 +40,25 @@
 
     <section class="hero">
         <h2>팝피씨 컴퓨터수리</h2>
-        <p>전부품 수리 및 업그레이드, 데이터 복구까지 당일 처리!</p>
-        <a href="tel:01079168608" class="cta-btn">📞 수리문의(전화걸기)</a>
+        <p>전부품 수리 및 업그레이드, 조립 PC 진단까지 당일 처리!</p>
+        <!-- 전화걸기 버튼 -->
+        <div>
+            <a href="tel:01079168608" class="cta-btn">📞 수리문의(전화걸기)</a>
+        </div>
+        <!-- 전화걸기 바로 아래에 배치된 네이버 리뷰 버튼 -->
+        <div>
+            <a href="https://map.naver.com/p/search/%ED%8C%9D%ED%94%BC%EC%94%A8/place/1268769224?placePath=%2Freview%3FabtExp%3DN-RES-RANK-26%3A1%3At_modeling_quality_imp%3D0.02%3B0%3B0%3B0%26bk_query%3D%ED%8C%9D%ED%94%BC%EC%94%A8%26entry%3Dpll%26fromNxList%3Dtrue%26fromPanelNum%3D2%26locale%3Dko%26searchText%3D%ED%8C%9D%ED%94%BC%EC%94%A8%26svcName%3Dmap_pcv5%26timestamp%3D202609141454&bk_query=%ED%8C%9D%ED%94%BC%EC%94%A8&entry=pll&from=map&fromNxList=true&fromPanelNum=2&timestamp=202609141454&locale=ko&svcName=map_pcv5&searchText=%ED%8C%9D%ED%94%BC%EC%94%A8&searchType=place&c=15.00,0,0,2,dh" 
+               target="_blank" 
+               class="hero-review-btn">
+                ⭐ 고객 리얼 후기 보러 가기
+            </a>
+        </div>
     </section>
 
     <div class="container">
-        <h3 class="section-title">주요 수리 성과 & 작업 사례</h3>
+        <h3 class="section-title">주요 서비스 품목</h3>
         
-        <!-- 이 영역 안에 data.js의 내용이 자동으로 카드로 변환되어 들어갑니다 -->
+        <!-- 이 영역 안에 data.js의 내용이 자동으로 카드로 변환되어 들어갑니다[cite: 1, 2] -->
         <div class="repair-grid" id="cardContainer"></div>
 
         <div class="map-section">
@@ -60,7 +73,7 @@
         <p>&copy; PopPC. All rights reserved.</p>
     </footer>
 
-    <!-- data.js를 읽어와서 카드를 자동 생성하는 스크립트 -->
+    <!-- data.js를 읽어와서 카드를 자동 생성하는 스크립트[cite: 1, 2] -->
     <script src="data.js"></script>
     <script>
         const container = document.getElementById('cardContainer');

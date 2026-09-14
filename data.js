@@ -1,4 +1,4 @@
-// 1. 기존 수리 항목 리스트 (썸네일 카드 유지)
+// 1. 기존 수리 항목 리스트 (썸네일 카드 유지)[cite: 3]
 const repairList = [
     {
         title: "용도별 맞춤 컴퓨터 조립",
@@ -30,7 +30,7 @@ const repairList = [
     }
 ];
 
-// 2. 우측 고정 전화 버튼 및 깔끔한 공구함(툴박스) 영역 생성
+// 2. 우측 고정 전화 버튼 및 깔끔한 공구함(툴박스) 영역 생성[cite: 3]
 (function() {
     const style = document.createElement('style');
     style.innerHTML = `
@@ -63,7 +63,7 @@ const repairList = [
             width: 100%;
             display: flex;
             justify-content: center;
-            margin: 20px 0 30px 0;
+            margin: 0 0 25px 0;
             box-sizing: border-box;
         }
         .simple-toolbox {
@@ -112,7 +112,7 @@ const repairList = [
     `;
     document.head.appendChild(style);
 
-    // 우측 중앙 고정 전화 버튼 생성
+    // 우측 중앙 고정 전화 버튼 생성[cite: 3]
     if (!document.getElementById('floatingCallBtn')) {
         const callBtn = document.createElement('a');
         callBtn.id = 'floatingCallBtn';
@@ -122,7 +122,7 @@ const repairList = [
         document.body.appendChild(callBtn);
     }
 
-    // '주요 수리 성과 & 작업 사례' 바로 위에 툴박스 삽입
+    // '주요 서비스 품목' 타이틀 바로 위에 툴박스 삽입
     window.addEventListener('DOMContentLoaded', function() {
         if (document.getElementById('simpleToolboxArea')) return;
 
@@ -143,11 +143,11 @@ const repairList = [
             </div>
         `;
 
-        // "주요 수리 성과" 문구를 가진 요소를 찾아 그 바로 위에 삽입
+        // "주요 서비스 품목" 타이틀 요소를 찾아 그 바로 위에 삽입
         let targetEl = null;
         const allElements = document.querySelectorAll('h2, h3, h4, div, span, p');
         for (let el of allElements) {
-            if (el.textContent && el.textContent.includes('수리 성과') && el.children.length < 2) {
+            if (el.textContent && el.textContent.includes('주요 서비스 품목') && el.children.length < 2) {
                 targetEl = el;
                 break;
             }
