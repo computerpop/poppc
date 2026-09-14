@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평택 컴퓨터수리 - 팝피씨</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Malgun Gothic', sans-serif; color: #333; line-height: 1.6; background-color: #f4f7f6; }
+        header { background: #1a1a2e; color: #fff; padding: 20px; text-align: center; }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('다운로드.jpg') no-repeat center center/cover;
+            color: white; text-align: center; padding: 80px 20px;
+        }
+        .hero h2 { font-size: 32px; margin-bottom: 10px; }
+        .hero p { font-size: 16px; margin-bottom: 20px; }
+        .cta-btn { display: inline-block; background: #e94560; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+        .section-title { font-size: 22px; margin-bottom: 20px; border-left: 5px solid #e94560; padding-left: 10px; }
+        .repair-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .repair-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-decoration: none; color: inherit; display: block; }
+        .repair-card img { width: 100%; height: 180px; object-fit: cover; }
+        .repair-content { padding: 15px; }
+        .repair-date { font-size: 12px; color: #888; margin-bottom: 5px; }
+        .repair-title { font-size: 18px; font-weight: bold; margin-bottom: 8px; color: #1a1a2e; }
+        .repair-desc { font-size: 14px; color: #666; }
+        .map-section { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 40px; text-align: center; }
+        .map-link-btn { display: inline-block; margin-top: 15px; background: #03c75a; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 14px; }
+        footer { background: #1a1a2e; color: #aaa; text-align: center; padding: 20px; margin-top: 50px; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>평택 컴퓨터수리</h1>
+        <p>신속정확한 진단과 완벽한 수리를 약속드립니다.</p>
+    </header>
+
+    <section class="hero">
+        <h2>팝피씨 컴퓨터수리</h2>
+        <p>전부품 수리 및 업그레이드, 데이터 복구까지 당일 처리!</p>
+        <a href="tel:01079168608" class="cta-btn">📞 수리문의(전화걸기)</a>
+    </section>
+
+    <div class="container">
+        <h3 class="section-title">주요 수리 성과 & 작업 사례</h3>
+        
+        <!-- 이 영역 안에 data.js의 내용이 자동으로 카드로 변환되어 들어갑니다 -->
+        <div class="repair-grid" id="cardContainer"></div>
+
+        <div class="map-section">
+            <h3 class="section-title" style="border-left: none; padding-left: 0;">오시는 길</h3>
+            <p style="margin-bottom: 10px; font-weight: bold; color: #333;">평택 컴퓨터수리 (팝PC)</p>
+            <a href="https://map.naver.com/p/search/%ED%8F%89%ED%83%9D%20%EC%BB%B4%ED%93%A8%ED%84%B0%EC%88%98%EB%A6%AC/place/1268769224?placePath=/home" target="_blank" class="map-link-btn">🗺️ 네이버 지도에서 위치 보기 & 길찾기</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>상호명: 평택 팝피씨 컴퓨터수리 | 주소: 경기 평택시 서재4길 30 팝피씨 | 전화번호: 010-7916-8608</p>
+        <p>&copy; PopPC. All rights reserved.</p>
+    </footer>
+
+    <!-- data.js를 읽어와서 카드를 자동 생성하는 스크립트 -->
+    <script src="data.js"></script>
+    <script>
+        const container = document.getElementById('cardContainer');
+        repairList.forEach(item => {
+            container.innerHTML += `
+                <a href="${item.url}" class="repair-card">
+                    <img src="${item.img}" alt="${item.title}">
+                    <div class="repair-content">
+                        <div class="repair-date">${item.date}</div>
+                        <div class="repair-title">${item.title}</div>
+                        <div class="repair-desc">${item.desc}</div>
+                    </div>
+                </a>
+            `;
+        });
+    </script>
+</body>
+</html>
